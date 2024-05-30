@@ -2,9 +2,10 @@
 const nextConfig = {
   output: "export",
   basePath: "/pangrango",
-  images: {
-    unoptimized: true,
-  },
+  reactStrictMode: true,
+  // images: {
+  //   unoptimized: true,
+  // },
 };
 
 export default nextConfig;
