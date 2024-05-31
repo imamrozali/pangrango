@@ -7,8 +7,8 @@ const repoName = "pangrango";
 
 const globalConfig = {
   output: "export",
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  // basePath: `/${repoName}`,
+  // assetPrefix: `/${repoName}/`,
   reactStrictMode: true,
   images: {
     unoptimized: true,
