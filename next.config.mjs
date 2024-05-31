@@ -42,11 +42,11 @@ const globalConfig = {
   images: {
     unoptimized: true,
   },
-  swcMinify: false,
-  poweredByHeader: false,
-  devIndicators: {
-    buildActivity: false,
-  },
+  // swcMinify: false,
+  // poweredByHeader: false,
+  // devIndicators: {
+  //   buildActivity: false,
+  // },
   env: {
     APP_MODE: process.env.APP_MODE,
   },
