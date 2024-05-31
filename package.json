@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "author": "Software Magicians",
   "private": true,
   "scripts": {
     "dev": "next dev",
