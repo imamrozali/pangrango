@@ -3,12 +3,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Define the image path based on the environment
-const path_github = process.env.NEXT_PUBLIC_IMAGE_PATH_GITHUB || ("" as string);
-const vercel = process.env.NEXT_PUBLIC_BASE_URL_VERCEL || ("" as string);
-
-export default function Home({ baseUrl }: any) {
-  const imagePath = baseUrl === vercel ? vercel : path_github;
+export default function Home() {
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -25,9 +20,9 @@ export default function Home({ baseUrl }: any) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By
+            By{" "}
             <Image
-              src={`${imagePath}/vercel.svg`}
+              src="/vercel.svg"
               alt="Vercel Logo"
               className="dark:invert"
               width={100}
@@ -41,7 +36,7 @@ export default function Home({ baseUrl }: any) {
       <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src={`${imagePath}/next.svg`}
+          src="/next.svg"
           alt="Next.js Logo"
           width={180}
           height={37}
@@ -120,14 +115,4 @@ export default function Home({ baseUrl }: any) {
       </div>
     </main>
   );
-}
-
-export async function getServerSideProps() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-  return {
-    props: {
-      baseUrl,
-    },
-  };
 }

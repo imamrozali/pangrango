@@ -6,8 +6,8 @@ const isProduction = process.env.NODE_ENV === "production";
 
 const globalConfig = {
   output: "export",
-  basePath: ``,
-  assetPrefix: ``,
+  basePath: "",
+  assetPrefix: "",
   reactStrictMode: true,
   images: {
     unoptimized: true,
