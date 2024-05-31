@@ -13,11 +13,11 @@ const globalConfig = {
   },
 };
 
-const provideConfig = withPWA({
-  disable: isProduction,
-  dest: "public",
-  register: true,
-  buildExcludes: [/app-build-manifest.json$/],
-})(globalConfig);
+// const provideConfig = withPWA({
+//   disable: isProduction,
+//   dest: "public",
+//   register: true,
+//   buildExcludes: [/app-build-manifest.json$/],
+// })(globalConfig);
 
-export default provideConfig;
+export default globalConfig;
