@@ -3,11 +3,11 @@
 import withPWA from "next-pwa";
 
 const isProduction = process.env.NODE_ENV === "production";
-const repoName = "pangrango";
 
 const globalConfig = {
   output: "export",
-  basePath: `/${repoName}`,
+  basePath: ``,
+  assetPrefix: ``,
   reactStrictMode: true,
   images: {
     unoptimized: true,
