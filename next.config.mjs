@@ -13,7 +13,6 @@ const globalConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
 };
 
 const provideConfig = withPWA({
