@@ -11,11 +11,15 @@ const globalConfig = {
   images: {
     unoptimized: true,
   },
+  trailingSlash: true,
 };
 
 const provideConfig = withPWA({
-  disable: isProduction,
+  disable: !isProduction,
   dest: "public",
+  register: true,
+  skipWaiting: true,
+  buildExcludes: [/middleware-manifest.json$/],
 })(globalConfig);
 
 export default provideConfig;
