@@ -4,9 +4,11 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 // Define the image path based on the environment
-const imagePath = process.env.NEXT_PUBLIC_IMAGE_PATH || "";
+const path_github = process.env.NEXT_PUBLIC_IMAGE_PATH_GITHUB || ("" as string);
+const vercel = process.env.NEXT_PUBLIC_BASE_URL_VERCEL || ("" as string);
 
-export default function Home() {
+export default function Home({ baseUrl }: any) {
+  const imagePath = baseUrl === vercel ? vercel : path_github;
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -23,7 +25,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            By
             <Image
               src={`${imagePath}/vercel.svg`}
               alt="Vercel Logo"
@@ -118,4 +120,14 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+  return {
+    props: {
+      baseUrl,
+    },
+  };
 }
