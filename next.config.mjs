@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-import withPWA from "next-pwa";
+// import withPWA from "next-pwa";
 
-const isProduction = process.env.NODE_ENV === "production";
+// const isProduction = process.env.NODE_ENV === "production";
 
 const globalConfig = {
   output: "export",
@@ -14,12 +14,12 @@ const globalConfig = {
   },
 };
 
-const provideConfig = withPWA({
-  disable: !isProduction,
-  dest: "public",
-  register: true,
-  skipWaiting: true,
-  buildExcludes: [/middleware-manifest.json$/],
-})(globalConfig);
+// const provideConfig = withPWA({
+//   disable: !isProduction,
+//   dest: "public",
+//   register: true,
+//   skipWaiting: true,
+//   buildExcludes: [/middleware-manifest.json$/],
+// })(globalConfig);
 
-export default provideConfig;
+export default globalConfig;
