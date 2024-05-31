@@ -36,17 +36,17 @@ const securityHeaders = [
 ];
 
 const globalConfig = {
-  output: "export",
-  basePath: "/pangrango",
-  reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
-  swcMinify: false,
-  poweredByHeader: false,
-  devIndicators: {
-    buildActivity: false,
-  },
+  // output: "export",
+  // basePath: "/pangrango",
+  // reactStrictMode: true,
+  // images: {
+  //   unoptimized: true,
+  // },
+  // swcMinify: false,
+  // poweredByHeader: false,
+  // devIndicators: {
+  //   buildActivity: false,
+  // },
   env: {
     APP_MODE: process.env.APP_MODE,
   },
@@ -64,7 +64,12 @@ const provideConfig = withPWA({
   disable: isProduction,
   dest: "public",
   register: true,
-  buildExcludes: [/app-build-manifest.json$/],
+  output: "export",
+  basePath: "/pangrango",
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
 })(globalConfig);
 
 export default provideConfig;
